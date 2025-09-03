@@ -11,9 +11,10 @@ dotenv.config({ path: path.join(__dirname, "../../../.env") });
 const autoPath = path.join(__dirname, "../dist/bin/auto.js");
 
 execSync(`chmod +x ${autoPath}`);
-const nextVersion = execSync(`${autoPath} shipit -dq`, {
+const nextVersion = process.env.NEXT_VERSION || execSync(`${autoPath} shipit -dq`, {
   encoding: "utf-8",
 }).trim();
+
 const parseArgsPath = path.join(__dirname, "../dist/parse-args.js");
 const parseArgsContent = fs.readFileSync(parseArgsPath, { encoding: "utf-8" });
 
