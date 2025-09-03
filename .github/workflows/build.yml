@@ -111,7 +111,7 @@ jobs:
         run: git fetch --unshallow --tags
       - run: yarn build
       - name: Create Release
-        run: yarn auto next -vv
+        run: yarn auto latest -v
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PROTECTED_BRANCH_REVIEWER_TOKEN: ${{ secrets.GH_TOKEN }}
