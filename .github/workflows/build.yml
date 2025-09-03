@@ -50,6 +50,7 @@ jobs:
       - uses: ./.github/actions/build-cache
       - uses: 8BitJonny/gh-get-current-pr@2.2.0
         id: PR
+      - run: echo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
       - run: yarn auto pr-check --pr $PR --url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
         env:
           PR: ${{ steps.PR.outputs.number }}
@@ -74,7 +75,7 @@ jobs:
       - uses: ./.github/actions/build-cache
       - name: Prepare repository
         run: git fetch --unshallow --tags
-      - run: yarn test:coverage
+      - run: yarn test
       # - run: yarn test:coverage
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -94,6 +95,7 @@ jobs:
           sha: ${{ github.event.pull_request.head.sha }}
       - uses: ./.github/actions/install-deps
       - uses: ./.github/actions/build-cache
+      - run: git remote -v
       - name: Prepare repository
         run: git fetch --unshallow --tags
       - name: Create Release
