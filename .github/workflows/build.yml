@@ -36,10 +36,10 @@ jobs:
         run: git fetch --unshallow --tags
       - uses: ./.github/actions/install-deps
       - uses: ./.github/actions/build-cache
-      - run: yarn build && yarn lerna run bundle --scope=auto
+      - run: yarn build
+      - run: yarn lerna run bundle --scope=auto
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_TOKEN: ${{ secrets.CANARY_NPM_TOKEN }}
 
   pr-check:
     runs-on: ubuntu-latest
@@ -75,14 +75,15 @@ jobs:
       - name: Prepare repository
         run: git fetch --unshallow --tags
       - run: yarn test:coverage
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Send CodeCov Results
-        run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_KEY
+      # - run: yarn test:coverage
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Send CodeCov Results
+      #   run: bash <(curl -s https://codecov.io/bash) -t $CODECOV_KEY
 
   release:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+    # if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     needs: build
     steps:
       - uses: actions/checkout@v3
@@ -99,6 +100,5 @@ jobs:
         run: yarn auto shipit -vv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ steps.PR.outputs.number && secrets.CANARY_NPM_TOKEN || secrets.NPM_TOKEN }}
           PROTECTED_BRANCH_REVIEWER_TOKEN: ${{ secrets.GH_TOKEN }}
           PR: ${{ steps.PR.outputs.number }}
