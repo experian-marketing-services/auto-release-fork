@@ -1,3 +1,28 @@
+# v11.3.2 (Thu Sep 04 2025)
+
+#### 🐛 Bug Fix
+
+- fix: update octokit/throttling plugin [#4](https://github.com/experian-marketing-services/auto-release-fork/pull/4) ([@restfulhead](https://github.com/restfulhead) [@laughedelic](https://github.com/laughedelic))
+
+#### ⚠️ Pushed to `main`
+
+- fix: run latest release, not next ([@laughedelic](https://github.com/laughedelic))
+- fix: only run the release job on manual dispatch ([@laughedelic](https://github.com/laughedelic))
+- fix: set git user/email for release ([@laughedelic](https://github.com/laughedelic))
+
+#### 🏠 Internal
+
+- feat: add version input to workflow and update inject-version script [#5](https://github.com/experian-marketing-services/auto-release-fork/pull/5) ([@gafiatulin](https://github.com/gafiatulin))
+- feat: add workflow_dispatch trigger to build workflow [#3](https://github.com/experian-marketing-services/auto-release-fork/pull/3) ([@gafiatulin](https://github.com/gafiatulin))
+
+#### Authors: 3
+
+- Alexey Alekhin ([@laughedelic](https://github.com/laughedelic))
+- Patrick Ruhkopf ([@restfulhead](https://github.com/restfulhead))
+- Victor ([@gafiatulin](https://github.com/gafiatulin))
+
+---
+
 # v11.3.0 (Fri Oct 25 2024)
 
 #### 🚀 Enhancement
