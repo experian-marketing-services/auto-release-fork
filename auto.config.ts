@@ -26,13 +26,13 @@ const brewOptions: IBrewPluginOptions = {
 export default function rc(): AutoRc {
   return {
     plugins: [
-      [
-        "protected-branch",
-        {
-          releaseTemporaryBranchPrefix: "protected-release-",
-          requiredStatusChecks: ["WIP", "build", "test", "lint"],
-        },
-      ],
+      // [
+      //   "protected-branch",
+      //   {
+      //     releaseTemporaryBranchPrefix: "protected-release-",
+      //     requiredStatusChecks: ["WIP", "build", "test", "lint"],
+      //   },
+      // ],
       [
         "upload-assets",
         [
