@@ -33,6 +33,7 @@ export default function rc(): AutoRc {
       //     requiredStatusChecks: ["WIP", "build", "test", "lint"],
       //   },
       // ],
+      "git-tag",
       [
         "upload-assets",
         [
