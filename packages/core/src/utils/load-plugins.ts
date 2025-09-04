@@ -150,7 +150,7 @@ export function findPlugin(
 
   // For pkg bundle
   const pkgPath = path.join(
-    "/snapshot/auto/plugins/",
+    "/snapshot/auto-release-fork/plugins/",
     pluginPath,
     "dist/index.js"
   );
@@ -261,7 +261,7 @@ export const listPlugins = async (
 
   const bundledPlugins = isBinary()
     ? formatPluginList(
-        await glob("/snapshot/auto/plugins/**", {
+      await glob("/snapshot/auto-release-fork/plugins/**", {
           onlyDirectories: true,
           deep: 0,
         })
