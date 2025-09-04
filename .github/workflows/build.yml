@@ -116,7 +116,7 @@ jobs:
         env: 
           NEXT_VERSION: ${{ github.event.inputs.version }}
       - name: Create Release
-        run: yarn auto latest -v
+        run: yarn auto shipit --verbose --no-changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PROTECTED_BRANCH_REVIEWER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
