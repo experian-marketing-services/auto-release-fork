@@ -44,7 +44,7 @@
     "@octokit/plugin-retry": "4.1.6",
     "@octokit/plugin-throttling": "5.2.3",
     "@octokit/plugin-rest-endpoint-methods": "7.2.1",
-    "@octokit/plugin-paginate-rest": "6.1.2",
+    "@octokit/plugin-paginate-rest": "9.2.2",
     "@octokit/rest": "19.0.13",
     "await-to-js": "^3.0.0",
     "chalk": "^4.0.0",
