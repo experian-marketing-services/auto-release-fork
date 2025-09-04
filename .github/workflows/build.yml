@@ -112,7 +112,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Bundle
-       run: yarn lerna run bundle --scope=auto
+        run: yarn lerna run bundle --scope=auto
       - name: Create Release
         run: yarn auto latest -v
         env:
