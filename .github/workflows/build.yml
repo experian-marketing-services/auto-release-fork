@@ -109,10 +109,13 @@ jobs:
       - run: git remote -v
       - name: Prepare repository
         run: git fetch --unshallow --tags
-      - run: yarn build
+      - name: Build
+        run: yarn build
+      - name: Bundle
+       run: yarn lerna run bundle --scope=auto
       - name: Create Release
         run: yarn auto latest -v
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PROTECTED_BRANCH_REVIEWER_TOKEN: ${{ secrets.GH_TOKEN }}
+          PROTECTED_BRANCH_REVIEWER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ steps.PR.outputs.number }}
