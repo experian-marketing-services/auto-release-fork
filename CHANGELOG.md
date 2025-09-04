@@ -1,5 +1,17 @@
 # v11.3.4 (Thu Sep 04 2025)
 
+#### ⚠️ Pushed to `main`
+
+- fix: packaging ([@laughedelic](https://github.com/laughedelic))
+
+#### Authors: 1
+
+- Alexey Alekhin ([@laughedelic](https://github.com/laughedelic))
+
+---
+
+# v11.3.4 (Thu Sep 04 2025)
+
 
 
 ---
