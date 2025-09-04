@@ -11,7 +11,10 @@
     "email": "lisowski54@gmail.com"
   },
   "pkg": {
-    "scripts": "../../plugins/**/dist/**/*.js"
+    "scripts": "../../plugins/**/dist/**/*.js",
+    "targets": [
+      "node18-linux-x64"
+    ]
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -64,6 +67,6 @@
   },
   "devDependencies": {
     "@types/signale": "^1.2.1",
-    "pkg": "^5.8.0"
+    "pkg": "^5.8.1"
   }
 }
