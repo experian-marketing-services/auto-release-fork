@@ -1,3 +1,15 @@
+# v11.3.5 (Thu Sep 04 2025)
+
+#### ⚠️ Pushed to `main`
+
+- fix: correct syntax and update plugin paths in load-plugins utility (alexey.alekhin@experian.com)
+
+#### Authors: 1
+
+- laughedelic (alexey.alekhin@experian.com)
+
+---
+
 # v11.3.4 (Thu Sep 04 2025)
 
 #### ⚠️ Pushed to `main`
