@@ -7,7 +7,7 @@ runs:
     - name: Use nodejs
       uses: actions/setup-node@v4
       with:
-        node-version: 18
+        node-version: 22
 
     - name: restore workspace cache
       uses: actions/cache@v3
@@ -37,6 +37,6 @@ runs:
       if: steps.pkg.outputs.cache-hit != 'true'
       shell: bash
       run: |
-        # yarn pkg-fetch -n node18 -p macos -a x64
-        # yarn pkg-fetch -n node18 -p win -a x64
-        yarn pkg-fetch -n node18 -p linux -a x64
+        # yarn pkg-fetch -n node22 -p macos -a x64
+        # yarn pkg-fetch -n node22 -p win -a x64
+        yarn pkg-fetch -n node22 -p linux -a x64
