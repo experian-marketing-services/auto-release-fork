@@ -113,6 +113,8 @@ jobs:
         run: yarn build
       - name: Bundle
         run: yarn lerna run bundle --scope=auto
+        env: 
+          NEXT_VERSION: ${{ github.event.inputs.version }}
       - name: Create Release
         run: yarn auto latest -v
         env:
